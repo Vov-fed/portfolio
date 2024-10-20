@@ -115,7 +115,11 @@ const navLinks = document.querySelectorAll('nav a');
 window.addEventListener('scroll', () => {
     let currentSection = '';
     const headerHeight = document.querySelector('header').offsetHeight; // Define headerHeight here as well
-    const additionalOffset = 80; // Make sure this matches the one in the smooth scroll
+            if (window.innerWidth >= 760){
+            const additionalOffset = 80; // Adjust this value as needed
+        } else{
+            const additionalOffset = 0;
+        }
 
     sections.forEach(section => {
         const sectionTop = section.offsetTop;
