@@ -486,15 +486,15 @@
                 <h2 class="contact-title">
                     Contact me
                 </h2>
-                <form action="send_mail.php" method="POST" class="contact-form">
+                <form action="https://formspree.io/f/xgvevoze" method="POST" class="contact-form">
                     <div class="form-wrapper">
                         <label class="contact-label name" for="name">Your name</label>
-                        <input id="name" class="contact-input" type="text" placeholder="Enter your name" required>
+                        <input name="name" id="name" class="contact-input" type="text" placeholder="Enter your name" required>
                         <label class="contact-label" for="mail">Your mail</label>
-                        <input id="mail" class="contact-input" type="mail" placeholder="your-email@gmail.com" required>
+                        <input name="mail" id="mail" class="contact-input" type="mail" placeholder="your-email@gmail.com" required>
                         <label class="contact-label" for="question">Request</label>
-                        <textarea id="question" class="textarea"></textarea>
-                        <input type="submit" class="contact-button" value="Submit">
+                        <textarea name="question" id="question" class="textarea"></textarea>
+                        <input name="submit" type="submit" class="contact-button" value="Submit">
                 </form>
             </div>
             </div>
