@@ -75,7 +75,7 @@ body{
 .form-input {
     height: 35px;
     border: 1.5px solid #fff;
-    border-radius: none;
+    border-radius: 0;
     background: #F6F6F624;
     width: 100%;
     color: #fff;
@@ -136,9 +136,5 @@ body{
     }
     .form-button{
         width: 100%;
-    }
-    .form-input {
-        border: 1px solid #fff;
-        border-radius: 0;
     }
 }
