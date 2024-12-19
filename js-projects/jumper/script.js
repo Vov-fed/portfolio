@@ -15,9 +15,9 @@ const player = {
     height: 60,
     speedX: 0,
     speedY: 0,
-    gravity: 0.1,
-    jumpPower: -6,
-    speed: 5,
+    gravity: 0.2, // Increased gravity
+    jumpPower: -8, // Increased jump power
+    speed: 5, // Increased speed
     image: new Image()
 };
 
@@ -70,6 +70,8 @@ function createCoin(platform) {
 }
 
 let animationFrameId;
+let lastTime = 0;
+const fixedTimeStep = 1000 / 120; // 120 FPS
 
 function initializeGame() {
     platforms = [];
@@ -97,17 +99,15 @@ function initializeGame() {
     player.y = 100;
     player.speedX = 0;
     player.speedY = 0;
-    gameLoop();
+    lastTime = performance.now();
+    gameLoop(lastTime);
 }
 
-
-function update() {
-    animationFrameId = requestAnimationFrame(gameLoop);
-
+function update(deltaTime) {
     // moves for player
-    player.x += player.speedX;
-    player.y += player.speedY;
-    player.speedY += player.gravity;
+    player.x += player.speedX * deltaTime;
+    player.y += player.speedY * deltaTime;
+    player.speedY += player.gravity * deltaTime;
 
     // moves to the beginning of the canvas if player goes out of the canvas
     if (player.x > canvas.width) {
@@ -122,7 +122,6 @@ function update() {
         ctx.fillRect(platform.x, platform.y, platform.width, platform.height);
 
         // check if player is on the platform
-
         if (
             player.y + player.height >= platform.y &&
             player.y + player.height <= platform.y + platform.height &&
@@ -228,7 +227,6 @@ function update() {
     });
 }
 
-
 function render() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
@@ -269,20 +267,15 @@ function endGame() {
 }
 
 // start game
-function gameLoop() {
-    update();
+function gameLoop(timestamp) {
+    const deltaTime = (timestamp - lastTime) / fixedTimeStep;
+    lastTime = timestamp;
+
+    update(deltaTime);
     render();
-    if (!supports120FPM()) {
-        update();
-        render();
-    }
-    requestAnimationFrame(gameLoop);
-}
 
-function supports120FPM() {
-    return window.matchMedia('(min-resolution: 120fpm)').matches;
+    animationFrameId = requestAnimationFrame(gameLoop);
 }
-
 
 // restart game
 document.querySelector('#restart').addEventListener('click', () => {
@@ -337,4 +330,3 @@ window.addEventListener('deviceorientation', (e) => {
 });
 
 initializeGame();
-// Update player's image when touching the platfor
