@@ -1,5 +1,10 @@
 /* Сброс стилей и базовые настройки */
 * {
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    touch-action: manipulation;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
