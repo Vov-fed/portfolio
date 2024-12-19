@@ -8,6 +8,31 @@ let score = 0;
 let bestScore = localStorage.getItem("bestScore") || 0;
 let boardValues = [];
 
+let targetFPS = 60;
+let frameInterval = 1000 / targetFPS;
+let lastFrameTime = 0;
+
+// Detect the device's frame rate support
+function detectFrameRate() {
+    let frameCount = 0;
+    let startTime = performance.now();
+
+    function countFrames(currentTime) {
+        frameCount++;
+        if (currentTime - startTime < 1000) {
+            requestAnimationFrame(countFrames);
+        } else {
+            targetFPS = frameCount;
+            frameInterval = 1000 / targetFPS;
+            initializeGame();
+        }
+    }
+
+    requestAnimationFrame(countFrames);
+}
+
+// Start the game with frame rate detection
+detectFrameRate();
 
 var isJumping = false;
 const player = {
@@ -271,9 +296,24 @@ function endGame() {
 }
 
 // start game
-function gameLoop() {
-    update();
-    render();
+function gameLoop(currentTime) {
+    const deltaTime = currentTime - lastFrameTime;
+
+    if (deltaTime >= frameInterval) {
+        lastFrameTime = currentTime - (deltaTime % frameInterval);
+
+        // Update and render the game state
+        update();
+        render();
+
+        // If the device does not support 60 FPM, update the game state twice per frame
+        if (targetFPS < 60) {
+            update();
+            render();
+        }
+    }
+
+    animationFrameId = requestAnimationFrame(gameLoop);
 }
 
 // restart game
