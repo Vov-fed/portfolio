@@ -150,18 +150,6 @@ body {
     }
 }
 
-
-@media (max-width: 600px) {
-    .win-message {
-        width: 80vw;
-        font-size: 20px;
-    }
-    .board{
-        width: 80vw;
-        height: 80vw;
-    }
-}
-
 #restart-btn{
     border: none;
     padding: 0;
@@ -177,4 +165,19 @@ body {
 }
 #restart-btn:hover{
     background: #b7a696af;
+}
+
+
+@media (max-width: 760px) {
+    .win-message {
+        width: 80vw;
+        font-size: 20px;
+    }
+    .board{
+        width: 80vw;
+        height: 80vw;
+    }
+    #restart-btn{
+        width: 80vw;
+    }
 }
