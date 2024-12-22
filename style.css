@@ -925,6 +925,11 @@ body.active {
   opacity: 1;
 }
 
+.projects-card-js {
+  -webkit-mask-image: url(img/js-box.svg) !important;
+          mask-image: url(img/js-box.svg) !important;
+}
+
 .projects-title {
   padding-top: 6vh;
   font-size: 35px;
