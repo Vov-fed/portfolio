@@ -49,11 +49,21 @@ if (activeAdd && activeAside) {
 
 
 const showMore = document.getElementsByClassName("projects-more")[0];
+const showMore1 = document.getElementsByClassName("projects-more")[1];
+
 const project = document.getElementsByClassName("projects-wrapper")[0];
+const project1 = document.getElementsByClassName("projects-wrapper")[1];
+
 showMore.addEventListener("click", () => {
   showMore.classList.toggle("active");
   project.classList.toggle("active");
 });
+
+showMore1.addEventListener("click", () => {
+  showMore1.classList.toggle("active");
+  project1.classList.toggle("active");
+}
+);
 
 document.addEventListener("DOMContentLoaded", () => {
   const aside = document.getElementsByClassName("aside")[0];
