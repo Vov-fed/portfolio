@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tertis game</title>
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="gameOver">
+        <h2>
+            Game Over!
+        </h2>
+        <h3>Your score: <span id="gameOverScore"></span></h3>
+        <h3 id="secondary">Best score: <span id="bestScore"></span></h3>
+        <button id="restart-btn"><img src="play-again.png" alt="play-again"></button>
+    </div>
+    <div id="tetris">
+        <div class="tetris-mini-wrapper">
+            <div id="tetris-score"></div>
+            <div id="play-btn">
+                <i class="fa-solid fa-pause" style="color: rgb(90, 54, 54);"></i>
+            </div>
+        </div>
+        <div id="best-score">Best:</div>
+    </div>
+</body>
+</html>
