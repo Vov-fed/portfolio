@@ -19,4 +19,5 @@ I specialize in both front-end and back-end development, with hands-on experienc
 
 ## 📫 Contact Me
 Feel free to reach out to me for collaborations or any exciting project opportunities:
-- [Add your email or social links here]
+- Whatsapp: 053-322-31-34
+- Email: fedorukvladimir94@gmail.com
