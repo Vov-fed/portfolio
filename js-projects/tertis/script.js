@@ -52,7 +52,6 @@ let randomColorForBoard = ['tomato', 'turquoise', 'aliceblue', 'bisque', 'orange
 
 function drawBoard(){
 let randomColorIndex = Math.floor(Math.random() * randomColorForBoard.length);
-console.log(randomColorForBoard[randomColorIndex]);
   if(document.querySelector('#tetris-board')){
     document.querySelector('#tetris-board').remove();
   }
@@ -152,7 +151,6 @@ function movePieceDown(){
     allPieces.forEach(piece => {
       tetrisValues[parseInt(piece.style.top) / 25][parseInt(piece.style.left) / 25] = 1;
       count += 3;
-      console.log(count);
       counter();
     })
     drawBoard();
@@ -221,12 +219,10 @@ function rotatePiece(){
       }
     }
   }
-  console.log(currentPiece, newPiece);
   rotate();
 }
 
 function rotate(){
-  console.log(isLegalRotate, isPossibleToRotateRight, isPossibleToRotateBottom);
   if(isLegalRotate && isPossibleToRotateRight && isPossibleToRotateBottom){
     runRotate();
   } else if(!isLegalRotate){
