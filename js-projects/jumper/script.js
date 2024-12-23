@@ -189,7 +189,6 @@ function update(deltaTime) {
 
     // check if game is over
     if (player.y >= canvas.height) {
-        console.log('Game Over');
         endGame();
     }
 
