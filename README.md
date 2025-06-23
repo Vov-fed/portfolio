@@ -16,8 +16,8 @@ I specialize in both front-end and back-end development, with hands-on experienc
 
 ## 🚀 Projects
 Check out my portfolio to see some of my work:  
-[My Portfolio](https://vov-fed.github.io/portfolio/)
-[My FullStck Application](https://f-card-lyart.vercel.app/)
+- [My Portfolio](https://vov-fed.github.io/portfolio/)
+- [My FullStck Application](https://f-card-lyart.vercel.app/)
 
 ## 📫 Contact Me
 Feel free to reach out to me for collaborations or any exciting project opportunities:
