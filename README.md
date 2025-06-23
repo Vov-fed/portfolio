@@ -23,4 +23,4 @@ Check out my portfolio to see some of my work:
 Feel free to reach out to me for collaborations or any exciting project opportunities:
 - **WhatsApp**: 053-322-31-34  
 - **Email**: fedorukvladimir94@gmail.com
-- **LinkedIn**: [click...](https://linkedin.com/in/vov-fed)
+- **[LinkedIn](https://linkedin.com/in/fedorukvladimir)**
